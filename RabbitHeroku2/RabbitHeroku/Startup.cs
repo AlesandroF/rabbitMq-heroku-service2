@@ -40,12 +40,6 @@ namespace RabbitHeroku2
                         ep.UseMessageRetry(r => r.Interval(2, 100));
                         ep.ConfigureConsumer<TicketConsumer>(provider);
                     });
-                    cfg.ReceiveEndpoint("ticketQueue_skipped", ep =>
-                    {
-                        ep.PrefetchCount = 16;
-                        ep.UseMessageRetry(r => r.Interval(2, 100));
-                        ep.ConfigureConsumer<TicketConsumer>(provider);
-                    });
                 }));
             });
             services.AddMassTransitHostedService();
