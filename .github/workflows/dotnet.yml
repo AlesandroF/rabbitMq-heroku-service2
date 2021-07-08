@@ -7,7 +7,7 @@ on:
     - release/*
 
 jobs:
-  build_icolors:
+  build_rabbit-heroku-2:
     runs-on: ubuntu-16.04
     steps:
     - uses: actions/checkout@v1
